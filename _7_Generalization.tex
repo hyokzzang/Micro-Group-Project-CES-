@@ -1,0 +1,48 @@
+\section{Important Generalizations}
+\subsection{Continuous CES Function}
+First, we consider the case of continuous version of the CES which is frequently used in the dynamic macroeconomic models, such as, \cite{CEE2005} and \cite{SmetsWouters2007}. We define $C$ and $P$ as indices of constant-elasticity-of-substitution aggregator defined as,
+\begin{IEEEeqnarray}{rCl}
+	C & \equiv & \left( \int_0^1 C(i)^{\sigma} di \right)^{\frac{1}{\sigma}} \label{C_aggregate} \\
+	P & \equiv & \left( \int_0^1 P(i)^{\frac{\sigma}{\sigma-1}} di \right)^{\frac{\sigma-1}{\sigma}} \label{P_aggregate}
+\end{IEEEeqnarray}
+$P$ represents aggregate price level under efficient aggregate consumption $C$. Then the purchase of individual goods $C(i)$ is indexed by continuum of differentiated goods where $i \in [0, 1]$. $C (i)$ becomes a function of its own price, aggregate consumption and price index.
+
+Given definitions above, the purchase of individual goods $c(i)$ becomes,
+\begin{IEEEeqnarray}{rCl}
+			C(i) = C \left( \frac{P(i)}{P}\right)^{-\frac{1}{1-\sigma}}. \label{c_individual}
+\end{IEEEeqnarray}
+The parts below shows the derivation process for the \eqref{c_individual}.
+
+Given endowment $w$ and budget constraint, $C$ should be maximized. Then the Lagrangian becomes,
+	\begin{IEEEeqnarray}{CCl}
+		\mathcal{L} = \left( \int_0^1 C(i)^{\sigma} \right)^{1/\sigma}  + \lambda \left( w - \int_0^1 P(i)C(i) di \right) \nonumber
+	\end{IEEEeqnarray}
+	Corresponding first order conditions are,
+	\begin{IEEEeqnarray}{CCl}
+		\frac{\partial \mathcal{L}}{\partial C_{t}(i)} & = & \left( \frac{C (i)}{C}\right)^{\sigma-1} - \lambda p(i) = 0 \nonumber \\
+		&& \Rightarrow C(i) = \left( \frac{P(i)}{p(j)} \right)^{-\frac{1}{1-\sigma}} C(j) \label{proof1_1} \\
+		\frac{\partial \mathcal{L}}{\partial \lambda} & = & w - \int_0^1 P(i)C(i) di = 0 \label{proof1_2}
+	\end{IEEEeqnarray}
+	Combining \ref{proof1_1} and \eqref{proof1_2},
+	\begin{IEEEeqnarray}{CCl}
+		w & = & \int_0^1 P(i) \left( \frac{P (i)}{P (j)} \right)^{-\frac{1}{1-\sigma}} C(j) di \nonumber \\
+		& = & C (j) P (j)^{\frac{1}{1-\sigma}} P^{1-\frac{1}{1-\sigma}} \label{proof1_3}
+	\end{IEEEeqnarray}
+	Rearranging (\ref{proof1_3}) and changing index from $j$ to $i$ gives,
+	\begin{IEEEeqnarray}{CCl}
+		C (i) = \frac{w}{P} \left( \frac{P (i) }{P} \right)^{-\frac{1}{1-\sigma}} \label{proof1_4}
+	\end{IEEEeqnarray}
+	Substituting \eqref{proof1_4} into \eqref{C_aggregate} (and omitting tedious algebra) gives,
+	\begin{IEEEeqnarray}{CCl}
+		C & = & \left( \int_0^1 \left[ \frac{w}{P} \left( \frac{P (i) }{P} \right)^{-\frac{1}{1-\sigma}}\right] ^{\sigma} di \right)^{\frac{1}{\sigma}} \nonumber \\
+		& = & \left( \int_0^1 P(i) C(i) \right) P^{-1} \label{proof1_5}
+	\end{IEEEeqnarray}
+	Multiplying $P$ on both sides of equations of (\ref{proof1_5}) and combining result of (\ref{proof1_3}) gives,
+	\begin{IEEEeqnarray}{CCl}
+		P C & = & \int_0^1 P(i) C(i) \nonumber \\
+		& = & C (i) P (i)^{\frac{1}{1-\sigma}} P^{1-\frac{1}{1-\sigma}} \label{proof1_6}
+	\end{IEEEeqnarray}
+	Finally, rearranging (\ref{proof1_6}) gives equation that we desired.
+	\begin{IEEEeqnarray}{CCl}
+		\therefore C(i) = C \left( \frac{P(i)}{P}\right)^{-\frac{1}{1-\sigma}} \nonumber
+	\end{IEEEeqnarray}

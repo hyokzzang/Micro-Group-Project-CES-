@@ -1,0 +1,75 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Application to Production Theory}
+\subsection{The General Problem}
+Production theory is based on the notion that firms want minimize the costs of inputs needed to produce a certain amount of output.  This problem can be presented as a constrained minimization problem where the objective function is the input cost function and the constraint is the CES production function. Specifically, this problem can be represented as follows:
+
+\begin{equation*}
+\begin{aligned}
+& \underset{x_1, x2, \cdots , x_L}{\text{minimize}}
+& & \sum_{l=1}^L p_ix_i \\
+& \text{subject to}
+& & q = \bigg( \sum_{l=1}^L a_ix_i^\sigma \bigg) ^{\frac{1}{\sigma}}
+\end{aligned}
+\end{equation*}
+
+Where $p_i$ is the price of input i, $x_i$ is the amount of input i used in production, $a_i$ is the share of input i used in production and $\sum_{i=1}^L = 1$, q is the amount of output produced by the firm, and $\frac{1}{1- \sigma}$ is the elasticity of substitution between inputs i and j. From this, we can set up a Lagrangian function as follows:
+
+\begin{equation*}
+\mathcal{L}(x_1, x_2, \cdots , x_L , a_1, a_2, \cdots, a_L, \lambda) =\sum_{l=1}^L p_ix_i  + \lambda  \bigg[ q - \bigg( \sum_{l=1}^L a_ix_i^\sigma \bigg) ^{\frac{1}{\sigma}} \bigg]
+\end{equation*}
+In order to solve for the optimal input levels $(x_1, x_2, \cdots, x_L)$, we need to look at the first order conditions of the Lagrangian and solve for $x_{\ell}$.
+
+The first order conditions can be expressed as follows:
+\begin{equation*}
+\begin{aligned}
+& \frac{\partial \mathcal{L}}{\partial x_1} = p_1 + \lambda \bigg[\Big(\sum_{i=1}^L a_1X_1^\sigma \Big)^\frac{1-\sigma}{\sigma}a_ix_i^{\sigma - 1} \bigg] &= 0  \\
+& \qquad\vdots \\
+& \frac{\partial \mathcal{L}}{\partial x_{L}} = p_L + \lambda \bigg[\Big(\sum_{i=1}^L a_iX_i^\sigma \Big)^\frac{1 - \sigma}{\sigma} a_Lx_L^{\sigma - 1}\bigg] &= 0
+\end{aligned}
+\end{equation*}
+
+From this we get:
+\begin{equation*}
+\begin{aligned}
+& p_1 &= - \lambda \bigg[\Big(\sum_{i=1}^L a_1X_1^\sigma \Big)^\frac{1-\sigma}{\sigma}a_ix_i^{\sigma - 1} \bigg] \\
+& \qquad \vdots \\
+& p_L &= - \lambda \bigg[\Big(\sum_{i=1}^L a_LX_L^\sigma \Big)^\frac{1-\sigma}{\sigma}a_ix_i^{\sigma - 1} \bigg]
+\end{aligned}
+\end{equation*}
+
+By using $\frac{\frac{\partial \mathcal{L}}{\partial x_i}}{\frac{\partial \mathcal{L}}{\partial x_{\ell}}}$, we can derive an expression for $x_i$ in terms of $x_{\ell}$.
+\begin{equation*}
+x_i = \bigg[\Big(P_ia_{\ell} \Big)^{\frac{\sigma}{\sigma - 1}} \Big(P_{\ell}a_i \Big)^{\frac{-\sigma}{\sigma - 1}} \bigg]x_{\ell}
+\end{equation*}
+Note that each $x_i$ can be expressed in terms of $a_i, P_i, \sigma, and x_{\ell}$.  By taking each expression for $x_i$ to the power of $\sigma$ and plugging them into the constraint, we get the following expression expression:
+\begin{equation*}
+q = a_{\ell}x_{\ell} + a_2\Big(P_ia_{\ell} \Big)^{\frac{\sigma}{\sigma - 1}} \Big(P_{\ell}a_i \Big)^{\frac{-\sigma}{\sigma - 1}} + \cdots + a_L\Big(P_ia_{\ell} \Big)^{\frac{\sigma}{\sigma - 1}} \Big(P_{\ell}a_i \Big)^{\frac{-\sigma}{\sigma - 1}} \iff
+\end{equation*}
+\begin{equation*}
+x_{\ell}^{*}(q, a_1, \cdots, a_L, P_1, \cdots, P_L) = \frac{q}{\bigg[a_{\ell} + \Big[\sum_{i \neq \ell} a_i  \Big(\frac{P_i}{a_i} \Big)^{\frac{\sigma}{\sigma - 1}} \Big] \Big(\frac{P_{\ell}}{a_{\ell}} \Big)^{\frac{-\sigma}{\sigma - 1}} \bigg]^{\frac{1}{\sigma}}}  \implies
+\end{equation*}
+\begin{equation*}
+x_{\ell}^{*} (q, a_1, \cdots, a_L, P_1, \cdots, P_L) = \frac{q \Big( \frac{P_{\ell}}{a_{\ell}} \Big)^{\frac{1}{\sigma - 1}}}{\bigg[\sum_{i=i}^L a_i \Big(\frac{P_i}{a_i}\Big)^\frac{\sigma}{\sigma-1} \bigg]^\frac{1}{\sigma}}
+\end{equation*}
+And thus the optimal input levels can be determined by the amount of output (q) the firm wishes to produce, the share of the inputs $(a_i)$, the prices of the inputs $(P_i)$, and the parameter value $\sigma$.
+
+\subsection{Homogeneity of the CES Production Function}
+The CES production function described by $\bigg( \sum_{l=1}^L a_ix_i^\sigma \bigg) ^{\frac{k}{\sigma}}$ is homogeneous of degree k. [ENTER DERIVATION HERE] \\
+
+\subsection{Homogeneity of the Input Demand Functions Derived from the CES Production Function}
+\subsubsection{Homogeneity of Degree 1 in Output}
+Clearly we can see that the input demand function is homogeneous of degree 1 in output.  This can be seen by the following example. For all $\alpha > 0$:
+\begin{equation*}
+x_{\ell}^{*}(\alpha q, a_1, \cdots, a_L, P_1, \cdots, P_L) = \frac{\alpha q}{\bigg[a_{\ell} + \Big[\sum_{i \neq \ell} a_i  \Big(\frac{P_i}{a_i} \Big)^{\frac{\sigma}{\sigma - 1}} \Big] \Big(\frac{P_{\ell}}{a_{\ell}} \Big)^{\frac{-\sigma}{\sigma - 1}} \bigg]^{\frac{1}{\sigma}}} = \alpha x_{\ell}^{*}(q, a_1, \cdots, a_L, P_1, \cdots, P_L)
+\end{equation*}
+\subsubsection{Homogeneity of Degree Zero in Prices and Input Shares}
+In addition, we can see that the input demand function is also homogeneous of degree zero in prices.  This can be seen by the following for all $\alpha >0$:
+\begin{equation*}
+\begin{aligned}
+&x_{\ell}^{*}(q, a_1, \cdots, a_L, \alpha P_1, \cdots, \alpha P_L) &= \frac{q \Big( \frac{\alpha P_{\ell}}{a_{\ell}} \Big)^{\frac{1}{\sigma - 1}}}{\bigg[\sum_{i=i}^L a_i \Big(\frac{\alpha P_i}{a_i}\Big)^\frac{\sigma}{\sigma-1} \bigg]^\frac{1}{\sigma}} \\
+& &= \frac{\alpha^{\frac{1}{\sigma - 1}}q \Big( \frac{P_{\ell}}{a_{\ell}} \Big)^{\frac{1}{\sigma - 1}}}{\alpha^{\frac{1}{\sigma - 1}}\bigg[\sum_{i=i}^L a_i \Big(\frac{P_i}{a_i}\Big)^\frac{\sigma}{\sigma-1} \bigg]^\frac{1}{\sigma}} \\
+& &= x_{\ell}^{*}(q, a_1, \cdots, a_L, P_1, \cdots, P_L) \\
+\end{aligned}
+\end{equation*}
+[ADD DERIVATION OF HOMOGENEITY OF DEGREE 0 IN INPUT SHARES HERE]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

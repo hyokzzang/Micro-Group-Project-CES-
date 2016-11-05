@@ -1,0 +1,121 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INPUT FILE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Functional Form}
+The CES function is a type of aggregator function which combines two or more types of goods into an aggregate quantity. This aggregator function exhibits constant elasticity of substitution which will be explained later. Before investigating its use in consumer and producer theory, we will observe its functional form and direct properties.
+\begin{IEEEeqnarray}{rCl}
+    f(x) = \left( \sum_{l=1}^L a_l x_l^{\sigma} \right)^{\frac{1}{\sigma}} \label{eq:CES_base1}
+\end{IEEEeqnarray}
+$x = (x_1, \cdots, x_L) \in \mathbb{R}_{+}^{L}$. The $\sigma$ determines the level of complementarity among goods. As $\sigma$ increases the level of complementarity also increases.
+
+\subsection{General Characteristics}
+\paragraph{Behavior of Derivatives, and Range of Parameters} To characterize the role of parameters $a_l$, and $\sigma$ we need to observe the behavior of $\partial f(x) / \partial x_l$. Partial differentiation of $f(x)$ with respect to $x_l$ gives,
+\begin{IEEEeqnarray}{rCl}
+    \frac{\partial f(x)}{\partial x_l} & = & a_l x_l^{\sigma-1} f(x)^{1-\sigma} \label{eq:1st_derivative}
+\end{IEEEeqnarray}
+To insure positivity of first derivative of $f(x)$ with respect to $l$th term, $\partial f(x) / \partial x_l > 0$, we need a condition that $a_l > 0$.
+
+It is common in Economics to assume second derivative of $f(x)$ with respect to $l$th good to be negative. It implies diminishing marginal utility or diminishing marginal product(returns) when applied to consumer or producer theory, respectively. Hence, let us observe the properties of the second derivative of $f(x)$, and figure out appropriate conditions for $\sigma$, and its implications.
+\begin{IEEEeqnarray}{rCl}
+    \frac{\partial^2 f(x)}{\partial x_l^2} & = & (\sigma-1)a_l x_l^{\sigma-2} f(x)^{1-\sigma} + a_l x^{\sigma-1}(1-\sigma)f(x)^{-\sigma}\frac{\partial f(x)}{\partial x_l} \nonumber \\
+    & = & (\sigma-1)a_l x_l^{\sigma-2} f(x)^{1-\sigma} + a_l^2 x^{2\sigma-2}(1-\sigma)f(x)^{1-2\sigma} \nonumber \\
+    & = &  (\sigma-1) a_l x_l^{\sigma-2} f(x)^{1-\sigma} \left[1 - a_l \left( \frac{x_l}{f(x)} \right)^{\sigma} \right] \nonumber \\
+    && \left( \because a_l x_l^\sigma \leq f(x)^{\sigma} = \sum_{l=1}^L f(x) a_l x_l^{\sigma} \right) \nonumber \\
+    & < & 0 \qquad \text{for } -\infty < \sigma < 1, \sigma \neq 0
+\end{IEEEeqnarray}
+Hence, we can conclude that if $\sigma$ satisfies $-\infty < \sigma < 1$, then CES functional form will exhibit diminishing marginal product (returns) or marginal utility when applied to producer theory or consumer theory respectively. Otherwise it will exhibit increasing marginal product which is used in some special cases.
+
+\paragraph{Homogeneity}
+Also, we can easily observe that it is homogeneous of degree one such as,
+\begin{IEEEeqnarray}{rCl}
+    f(\alpha x) & = & \left( \sum_{l=1}^L a_l (\alpha x_l)^{\sigma} \right)^{\frac{1}{\sigma}} \nonumber \\
+    & = & \alpha \left( \sum_{l=1}^L a_l x_l^{\sigma} \right)^{\frac{1}{\sigma}} \nonumber \\
+    & = & \alpha f(x)
+\end{IEEEeqnarray}
+
+\paragraph{Homotheticity}
+When considered as a utility function we can see that CES exhibits homotheticity. Suppose that CES utility function represents a preference relation $\succsim$. Then, we need to show that $x \sim x'$ implies $\alpha x \sim \alpha x'$. We can easily see that $f(x) = f(x')$ implies $f(\alpha x) = f(\alpha x')$ since the function is homogeneous to degree one with respect to $x$.
+
+\paragraph{Monotonicity}
+As discussed earlier, if $a_l > 0$ then, for every $l \in \{1, 2,, \cdots L\}$, $\partial f(x) / \partial x_l > 0$ is guaranteed. Moreover since $x \geq x'$ implies $f(x) \geq f(x')$ the function is strictly monotonic when applied to the utility function.
+
+\paragraph{Constant Elasticity of Substitution}
+The most important feature of CES function is that its elasticity of substitution is fixed to $\frac{1}{\sigma}$. To show this we compute elasticity of \emph{relative of changes of the $f(x_k) / f(x_l)$} to \emph{relative changes in each two components $x_k / x_l$}.
+
+Demand Function:
+	
+		\begin{equation}
+		\frac{x_k\left(p,m\right)}{x_l\left(p,m\right)} = \frac{\left(\frac{p_k}{\alpha_k}\right)^{\frac{1}{\gamma-1}}}{\left(\frac{p_l}{\alpha_l}\right)^{\frac{1}{\gamma-1}}}
+		\end{equation}		
+		
+		\begin{equation}
+		\frac{x_k\left(p,m\right)}{x_l\left(p,m\right)} = \left(\frac{p_k}{p_l}\right)^{\frac{1}{\alpha -1}}\left(\frac{\alpha_l}{\alpha_k}\right)^{\frac{1}{\gamma-1}}
+		\end{equation}		
+
+		\begin{equation}
+		\ln\left(\frac{x_k\left(p,m\right)}{x_l\left(p,m\right)}\right)= {\frac{1}{\gamma-1}} ln\left(\frac{p_k}{p_l}\right) + {\frac{1}{\gamma-1}} ln\left(\frac{\alpha_l}{\alpha_k}\right)
+		\end{equation}		
+
+		\begin{equation}
+		\frac{\partial \ln\left(\frac{x_k\left(p,m\right)}{x_l\left(p,m\right)}\right)}{\partial\ln\left(\frac{p_k}{p_l}\right)} = \frac{1}{\gamma-1}
+		\end{equation}			
+
+\paragraph{Demand Function}
+\begin{IEEEeqnarray}{rCl}
+x_k\left(p,w\right) = \frac{\left(\frac{p_k}{\alpha_k}\right)^{\frac{1}{\gamma-1}}w}{\sum_{j=1}^{n} p_j\left(\frac{p_j}{\alpha_j}\right)^{\frac{1}{\gamma-1}}}
+\end{IEEEeqnarray}
+
+			
+\begin{IEEEeqnarray}{rCl}
+\frac{x_k\left(p,w\right)}{x_l\left(p,w\right)}
+\nonumber
+&=& \frac{\left(\frac{p_k}{\alpha_k}\right)^{\frac{1}{\gamma-1}}w}{\sum_{j=1}^{n} p_j\left(\frac{p_l}{\alpha_l}\right)^{\frac{1}{\gamma-1}}} \times
+\frac{\sum_{j=1}^{n} p_j\left(\frac{p_l}{\alpha_l}\right)^{\frac{1}{\gamma-1}}}{\left(\frac{p_l}{\alpha_l}\right)^{\frac{1}{\gamma-1}}w}
+\nonumber \\
+&=& \frac{\left(\frac{p_k}{\alpha_k}\right)^{\frac{1}{\gamma-1}}}{\left(\frac{p_l}{\alpha_l}\right)^{\frac{1}{\gamma-1}}}
+\nonumber \\
+&=& \left(\frac{p_k}{p_l}\right)^{\frac{1}{\alpha -1}}\left(\frac{\alpha_l}{\alpha_k}\right)^{\frac{1}{\gamma-1}}
+\end{IEEEeqnarray}
+		
+		
+\begin{IEEEeqnarray}{rCl}
+\ln\left(\frac{x_k\left(p,w\right)}{x_l\left(p,w\right)}\right)= {\frac{1}{\gamma-1}} ln\left(\frac{p_k}{p_l}\right) + {\frac{1}{\gamma-1}} ln\left(\frac{\alpha_l}{\alpha_k}\right)
+\end{IEEEeqnarray}
+				
+\begin{IEEEeqnarray}{rCl}
+\frac{\partial \ln\left(\frac{x_k\left(p,w\right)}{x_l\left(p,w\right)}\right)}{\partial\ln\left(\frac{p_k}{p_l}\right)} = \frac{1}{\gamma-1}
+\end{IEEEeqnarray}
+	
+\paragraph{Cross Differentiation} Let's investigate the characteristics of cross effects, i.e., $\partial^2 f(x) / \partial x_l \partial x_k$.
+\begin{IEEEeqnarray}{rCl}
+    \frac{\partial^2 f(x)}{\partial x_l \partial x_k} & = & a_l a_k \frac{\sigma}{1-\sigma} x_l^{\sigma-1} x_k^{\sigma-1} f(x)^{-\sigma}
+\end{IEEEeqnarray}
+We can see that if $\sigma < 1$, then this cross effect is negative. The implication of this property is that if the CES function exhibits the decreasing marginal utility or product, then it also guarantees the negative cross effect.
+
+\subsection{Characteristics of Demand Function}
+Its demand function for $k$th good, which will be derived in Section \ref{sec:consumer} is,
+\begin{IEEEeqnarray}{rCl}
+    x_k(p,w) & = & \frac{w\left( \frac{p_k}{a_k} \right)^{\frac{1}{\sigma-1}}}{\sum_{j=1}^L p_j \left( \frac{p_j}{a_j} \right)^{\frac{1}{\sigma-1}}}
+\end{IEEEeqnarray}
+
+\paragraph{Walras' law}
+\begin{IEEEeqnarray}{rCl}
+    p \cdot x(p, w) &=& p {\frac{\frac{p_{k}}{\alpha_{k}}^{\frac{1}{\sigma-1}}}{\sum_{j=1}^{n} p_{j} \frac{p_{j}}{\alpha_{j}}^{\frac{1}{(\sigma-1)}}}}w  \nonumber \\
+	& = & p_{1} \cdot {\frac{\frac{p_{1}}{\alpha_{1}}^{\frac{1}{\sigma-1}}}{\sum_{j=1}^{n} p_{j} \frac{p_{j}}{\alpha_{j}}^{\frac{1}{(\sigma-1)}}}}w + p_{2} \cdot {\frac{\frac{p_{2}}{\alpha_{2}}^{\frac{1}{\sigma-1}}}{\sum_{j=1}^{n} p_{j} \frac{p_{j}}{\alpha_{j}}^{\frac{1}{(\sigma-1)}}}}w + \cdots + p_{L} \cdot {\frac{\frac{p_{L}}{\alpha_{L}}^{\frac{1}{\sigma-1}}}{\sum_{j=1}^{n} p_{j} \frac{p_{j}}{\alpha_{j}}^{\frac{1}{(\sigma-1)}}}}w  \nonumber \\
+	& = & {\frac{\sum_{j=1}^{n} wp_{j} \frac{p_{j}}{\alpha_{j}}^{\frac{1}{(\sigma-1)}}}{\sum_{j=1}^{n} p_{j} \frac{p_{j}}{\alpha_{j}}^{\frac{1}{(\sigma-1)}}}} \nonumber \\
+	& = &  w
+\end{IEEEeqnarray}
+
+\paragraph{Homogeneous of degree zero}
+\begin{IEEEeqnarray}{rCl}
+	x(\delta p, \delta w) & = & {\frac{\frac{\delta p_{k}}{\alpha_{k}}^{\frac{1}{\sigma-1}}}{\sum_{j=1}^{n} \delta p_{j} \frac{\delta p_{j}}{\alpha_{j}}^{\frac{1}{(\sigma-1)}}}} \cdot \delta w
+ \nonumber \\
+  & = & {\frac{\frac{ p_{k}}{\alpha_{k}}^{\frac{1}{\sigma-1}}}{\sum_{j=1}^{n} p_{j} \frac{p_{j}}{\alpha_{j}}^{\frac{1}{(\sigma-1)}}}} \cdot w
+  \nonumber \\
+  & = & x_{k}(p,w)
+\end{IEEEeqnarray}
+
+\paragraph{Indirect utility function}
+\begin{IEEEeqnarray}{rCl}
+    V = \frac{w}{\left(\sum_{j=1}^{n} \alpha_{j}^{\frac{-1}{(\sigma-1)}} p_{j}^{\frac{\sigma}{\sigma-1}}\right)^{\frac{\sigma-1}{\sigma}}}
+\end{IEEEeqnarray}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 

@@ -1,0 +1,41 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INPUT FILE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Typical Monotone Increasing Transformation}
+A typical monotonic increasing transformation for CES functions is applying the natural logarithm to the CES function. Any monotonic transformation of a homothetic function is homothetic. Any monotonic increasing transformation of the CES function would exhibit the same isoquants, and so, the same elasticity of substitution.
+	
+In the case of CES preference ordering (i.e. demand? utility?), monotonic transformations of the production function do not matter at all.
+	
+In addition to taking the natural logarithm of the CES function, another monotonic increasing transformation is taking the entire function to the power of $\beta$.{ This results in the "general" form of the utility function as seen in Part 1.}
+
+\subsection{Log version}
+Log-CES function, which will be extensively used in Section \ref{sec:special_case}, can be one example of monotone increasing transformation of the CES function.
+\begin{IEEEeqnarray}{rCl}
+\ln f(x) & = & \frac{1}{\sigma} \ln \left( \sum_{l=1}^L a_l x_l^{\sigma} \right) \label{eq:CES_monotone1}
+\end{IEEEeqnarray}
+First thing to check is that, does log-transformation change the preference order of variables? To see this we should check if $x \prec x'$ implies $\ln(f(x)) \leq \ln(f(x'))$. This is trivial since log is monotone increasing transformation, so $f(x)) \leq f(x')$ implies $\ln(f(x)) \leq \ln(f(x'))$. The log transformation also satisfies the homotheticity.
+
+\subsection{Scaling of Parameters}
+In this section we apply a monotonic increasing transformation $g(\cdot)$ which is defined as $g(x) = x^{\beta}$ where $\beta>0$. Then, applying this monotonic transformation, the CES function can be rewritten as,
+\begin{IEEEeqnarray}{rCl}
+    \hat{f}(x) = \left( \sum_{l=1}^L a_l x_l^{\sigma} \right)^{\frac{\beta}{\sigma}} \label{eq:CES_monotone2}
+\end{IEEEeqnarray}
+One big difference made by introducing $\beta$ is that the $\hat{f}(x)$ becomes homogeneous to degree $\beta$ with respect the $x$, that is $\beta\hat{f}{x} = \hat{f}{\beta x}$ since
+\begin{IEEEeqnarray}{rCl}
+    \hat{f}(\beta x) & = & \left( \sum_{l=1}^L a_l (\beta x_l)^{\sigma} \right)^{\frac{\beta}{\sigma}} \nonumber \\
+    & = & \beta^{\frac{\sigma \beta}{\sigma}} \left( \sum_{l=1}^L a_l x_l^{\sigma} \right)^{\frac{\beta}{\sigma}} \nonumber \\
+    & = & \beta \left( \sum_{l=1}^L a_l x_l^{\sigma} \right)^{\frac{\beta}{\sigma}} \nonumber \\ 
+    & = & \beta \hat{f}(x) \label{eq:CES_monotone2}
+\end{IEEEeqnarray}
+
+What happens to the marginal rate of substitution, $\text{MRS}_{jk}$, between $x_j$ and $x_k$? Since,
+\begin{IEEEeqnarray}{rCl}
+    \frac{\partial \hat{f}(x) / \partial x_j}{\partial \hat{f}(x) / \partial x_k} & = & \frac{\beta \left(\sum_{l=1}^{L}a_l x_l^{\sigma} \right)^{\frac{\beta-\sigma}{\sigma}} a_j x_j^{\sigma-1}}{\beta \left(\sum_{l=1}^{L}a_l x_l^{\sigma} \right)^{\frac{\beta-\sigma}{\sigma}} a_k x_k^{\sigma-1}} \nonumber \\
+    & = & \frac{a_j x_j^{\sigma-1}}{a_k x_k^{\sigma-1}} \nonumber \\
+    & = & \frac{\partial f(x)/ \partial x_j}{\partial f(x)/ \partial x_k} \nonumber
+\end{IEEEeqnarray}
+we can see that the marginal rate of substitution is the same before taking the increasing monotone transformation. Since for all $j$, and $k$, this ordinal property of the CES utility function holds, this monotonic transformation do not change the optimal bundle of consumption in the utility maximization problem.
+
+However, since the utility function is no longer homogeneous of degree one, this is cardinal property, and the value function will also be a homogeneous of degree $\beta$.
+
+What happens when $\beta = \sigma$? Then the utility or production function becomes linearly separable with respect to $x$ which makes cross effects zero, $\partial^2 \hat{f}(x) / \partial x_l \partial x_k =0 $. In this case, utility ordering will not depend on the level of individual commodities, that is for $x = (\alpha, x_2, \cdots, x_L)$, and $y = (\alpha, y_2, \cdots, y_L)$, and $x \succ y$, will also imply $x' \succ y'$ where $x' = (\beta, x_2, \cdots, x_L)$, $y' = (\beta, y_2, \cdots, y_L)$, and $\alpha \neq \beta$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 

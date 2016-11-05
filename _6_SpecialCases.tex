@@ -1,0 +1,82 @@
+\section{Important Special Cases} \label{sec:special_case}
+\subsection{Cobb-Douglas: When $\sigma$ Tend to Zero}
+When $\sigma \rightarrow 0$, then the utility function in \eqref{eq:utility} becomes Cobb-Douglas utility function. To show this, first take natural logarithm on \eqref{eq:utility}.
+\begin{IEEEeqnarray}{rCl}
+    \ln u = \frac{\ln(\sum_{l=1}^L a_l x_l^{\sigma})}{\sigma} \label{eq:lnu}
+\end{IEEEeqnarray}
+Then using L'Hopital's rule gives,
+\begin{IEEEeqnarray}{rCl}
+    \lim_{\sigma \rightarrow 0} \ln u & = & \lim_{\sigma \rightarrow 0} \frac{\ln(\sum_{l=1}^L a_l x_l^{\sigma})}{\sigma} = \lim_{\sigma \rightarrow 0} \frac{\sum_{l=1}^L a_l \ln(x_l) x_l^{\sigma}}{\sum_{l=1}^L a_l x_l^{\sigma}} \quad \left( \because \frac{dx^{\sigma}}{d\sigma} = x^{\sigma}\ln x \right) \nonumber \\
+    & = & \frac{\ln \prod_{l=1}^{L} x_l^{a_l}}{\sum_{l=1}^L a_l} \label{eq:lhopital}
+\end{IEEEeqnarray}
+Taking exponential to \eqref{eq:lnu}, and assuming $\sum_{l=1}^{L}a_l = 1$ gives,
+\begin{IEEEeqnarray}{rCl}
+    u = \prod_{l=1}^{L} x_l^{a_l} \label{eq:CobbDouglas}
+\end{IEEEeqnarray}
+
+\subsection{Perfect Substitutes: When $\sigma$ Tend to One}
+It is easy to see that as $\sigma \rightarrow 1$, the utility function in \eqref{eq:utility} becomes $u = \sum_{l=1}^L a_l x_l$ demand function in \eqref{eq:demand} becomes $x_k = w / \left( \sum_{l=1}^L p_j \right)$
+
+\subsection{Leontief: When $\sigma$ Tend to Minus Infinity}
+Exactly the same process as Cobb-Douglas. Using \eqref{eq:lhopital}, and letting $\sigma \rightarrow -\infty$ then,
+\begin{IEEEeqnarray}{rCl}
+    \lim_{\sigma \rightarrow -\infty} \ln u & = & \lim_{\sigma \rightarrow -\infty} \frac{\sum_{l=1}^L a_l \ln(x_l) x_l^{\sigma}}{\sum_{l=1}^L a_l x_l^{\sigma}} \label{eq:lhopital2}
+\end{IEEEeqnarray}
+Taking $x = \min\{x_1, \cdots, x_L\}$, dividing numerator and denominator of $\eqref{eq:lhopital2}$ by x gives,
+\begin{IEEEeqnarray}{rCl}
+    \lim_{\sigma \rightarrow -\infty} \ln u & = & \lim_{\sigma \rightarrow -\infty} \frac{\sum_{l=1}^L a_l \ln(x_l) \left(\frac{x_l}{x}\right)^{\sigma}}{\sum_{l=1}^L a_l \left(\frac{x_l}{x}\right)^{\sigma}} \nonumber \\
+    & = & \lim_{\sigma \rightarrow -\infty} \frac{a \ln(x)}{a} \nonumber \\
+    && \Rightarrow u = x = \min\{x_1, \cdots, x_L\} \nonumber
+\end{IEEEeqnarray}
+
+\subsection{Limiting Forms in the Continuum Case}
+In much of the literature, the discussion revolves around the relationship between the CES, Cobb-Douglas, and Leontief functions using the value of elasticity of substitution in the discrete object model. At a minimum, however, there is a benefit in examining the continuum object case for completeness. Therefore, consider a continuum object $X$ indexed by $x$ for each variety, or put differently, a continuum of goods. Using \cite{Saito2012} as a guide, let $\infty$ and $-\infty$ be the upper and lower boundaries of $X$, respectively. Let $\mathcal{G}(x)$ be the cumulative utility-weight function of $X$ such that $\mathcal{G}(x) = 0$ for $x \rightarrow -\infty$ and $\mathcal{G}(x) = 1$ for $x \rightarrow \infty$. Let the function $g$ be associated with $\mathcal{G}(x)$ by $\mathcal{G}'(x) = g(x)$. Moreover, to focus only on goods, we assume that $g(x) > 0$ for all $x$. Because of this, we can alternatively say that $\mathcal{G}$ and $g$ are the cumulative distribution and density functions of the weights of differentiated objects, respectively. These distribution functions can subsequently characterize the technology or the preference. Using Stieltjes integral form, the continuum version of the CES function is defined by:
+
+
+\begin{equation}
+V(X) = \bigg(\int_X c(x)^\sigma d\mathcal{G}(x)\bigg)^{\frac{1}{\sigma}},
+\end{equation}
+
+where $\sigma$ is the technology or preference parameter and $c(x) > 0$ is the quantity of input of each variety. We then consider the convergence of $\ln V(X)$ for $\sigma \rightarrow 0$ and $\sigma \rightarrow -\infty$. For $\sigma \rightarrow 0$, we can use the same method as in the discrete model (l'H\^{o}pital's rule in terms of $\sigma$). As such, we obtain a similar result:
+
+\begin{equation}
+\lim\limits_{\sigma \rightarrow 0}\ln V(X) = \lim\limits_{\sigma \rightarrow 0}\frac{\int_X c(x)^\sigma \ln c(x) d \mathcal{G}(x)}{\int_X c(x)^\sigma d \mathcal{G}(x)} = \frac{\int_X \ln c(x) d \mathcal{G}(x)}{\int_X d \mathcal{G}(x)}.
+\end{equation}
+
+In particular, if $\mathcal{G}$(x) is not truncated by $X$, we can find that
+
+\begin{equation*}
+\int_X d\mathcal{G}(x) = 1 \implies \lim\limits_{\sigma \rightarrow 0}\ln V(X) = \int_X \ln c(x) d\mathcal{G}(x).
+\end{equation*}
+
+If $X$ truncates the distribution, we will get that $\int_X d\mathcal{G}(x) \neq 1$. However, we can get an equivalent result by defining the truncated distribution function differently. For example, let $G(x)$ be the truncated CDF with $G'(x) = g(x)$, and define
+
+\begin{equation}
+G(x) \equiv \frac{G(x)}{\int_X d \mathcal{G}(y) dy} \implies g(x) \equiv \frac{g(x)}{\int_X d \mathcal{G}(y) dy}.
+\end{equation}
+
+We can then obtain
+
+\begin{equation}
+\lim\limits_{\sigma \rightarrow 0}\ln V(X) = \int_X \frac{g(x)}{\int_X d \mathcal{G}(y) dy} \ln c(x) \equiv \int_X ln c(x) d G(x).
+\end{equation}
+
+For $\sigma \rightarrow -\infty$, as $V(x) \equiv \bar{c}$ if $c(x) \equiv \bar{c}$, we begin by stating that by definition, we have
+
+\begin{equation}\label{eq:infsupcont}
+\inf c(x) \leq \bigg(\int_X c(x)^\sigma d\mathcal{G}(x)\bigg)^{\frac{1}{\sigma}} \leq \sup c(x)
+\end{equation}
+
+With this in mind, we take the first-order derivative of $V(X)$ with respect to $\sigma$:
+
+\begin{equation}\label{eq:vthetacont}
+\frac{\partial V}{\partial \sigma} = \bigg(\int_X c(x)^{\sigma -1} d\mathcal{G}(x)\bigg)\bigg(\int_X c(x)^{\sigma} d\mathcal{G}(x)\bigg)^{\frac{1 - \sigma}{\sigma}} > 0.
+\end{equation}
+
+This inequality condition (\ref{eq:infsupcont}) indicates that $V(X)$ reaches the infimum of $c(x)$ indicated by (\ref{eq:vthetacont}) for $\sigma \rightarrow -\infty$ (Leontief case).
+
+To ensure the convergence of the CES to the Leontief for $\sigma \rightarrow -\infty$, we consider the situation where $V(X) \rightarrow \sup c(x) \in [inf c(x), \infty]$. Again, by $V(x) \equiv \bar{c}$ if $c(x) \equiv \bar{c}$ for all $x, V(X) \rightarrow \sup c(x)$ if and only if $\inf c(x) = \sup c(x)$. This means that the value of $G$ is determined by the infimum of $c(x)$. Therefore, by (\ref{eq:infsupcont}), (\ref{eq:vthetacont}), and the squeezing principle, the CES function approaches the corresponding Leontief function:
+
+\begin{equation}
+\lim\limits_{\sigma \rightarrow 0}\ln V(X) = \inf c(x).
+\end{equation}
